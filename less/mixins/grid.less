@@ -18,8 +18,8 @@
   &:extend(.clearfix all);
 }
 
-// Generate the extra small columns
-.make-xs-column(@columns; @gutter: @grid-gutter-width) {
+// Generate the extra extra small columns
+.make-xxs-column(@columns; @gutter: @grid-gutter-width) {
   position: relative;
   float: left;
   width: percentage((@columns / @grid-columns));
@@ -27,15 +27,48 @@
   padding-left:  (@gutter / 2);
   padding-right: (@gutter / 2);
 }
-.make-xs-column-offset(@columns) {
+.make-xxs-column-offset(@columns) {
   margin-left: percentage((@columns / @grid-columns));
 }
-.make-xs-column-push(@columns) {
+.make-xxs-column-push(@columns) {
   left: percentage((@columns / @grid-columns));
 }
-.make-xs-column-pull(@columns) {
+.make-xxs-column-pull(@columns) {
   right: percentage((@columns / @grid-columns));
 }
+
+
+// Generate the extra small columns
+.make-xs-column(@columns; @gutter: @grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+    @media (min-width: @screen-xs-min) {
+    float: left;
+    width: percentage((@columns / @grid-columns));
+  }
+}
+.make-xs-column-offset(@columns) {
+  @media (min-width: @screen-xs-min) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+
+}
+.make-xs-column-push(@columns) {
+  @media (min-width: @screen-xs-min) {
+    left: percentage((@columns / @grid-columns));
+  }
+
+}
+.make-xs-column-pull(@columns) {
+
+  @media (min-width: @screen-xs-min) {
+    right: percentage((@columns / @grid-columns));
+  }
+}
+
+
 
 // Generate the small columns
 .make-sm-column(@columns; @gutter: @grid-gutter-width) {
