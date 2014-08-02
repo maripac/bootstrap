@@ -5,7 +5,8 @@
 
 Clone bootstrap's repo, cd into the directory storing the package.json and Gruntfile.js, and install node modules.
 
-`git clone https://github.com/twbs/bootstrap.git`
+
+`git clone https://github.com/maripac/bootstrap.git`
 
 `cd bootstrap`
 
